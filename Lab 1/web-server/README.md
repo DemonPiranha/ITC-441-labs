@@ -87,7 +87,7 @@ Procedures:
 
 6.  Model of the functionality, logical flow, and components of the system. Diagram provided in Appendix.
 
-  a.  Functionality -- This system serves as a basic state machine, represented by the diagram in Appendix 1:
+    1.  Functionality -- This system serves as a basic state machine, represented by the diagram in Appendix 1:
 
     i.  While in the "Start" state:
 
