@@ -162,6 +162,7 @@ State: /cycle
 
 (available at <https://github.com/DemonPiranha/ITC-441-labs/blob/main/Lab%201/web-server/ledcontrol.py> )
 
+`
 import RPi.GPIO as GPIO
 
 import time
@@ -337,11 +338,13 @@ def cycle():
 if __name__ == "__main__":
 
    app.run(host='0.0.0.0', port=80, debug=True)
+  `
 
 ### Appendix 6: HTML Code
 
 (available at <https://github.com/DemonPiranha/ITC-441-labs/blob/main/Lab%201/web-server/templates/main.html> )
 
+`
 <!DOCTYPE html>
 
 <head>
@@ -395,3 +398,4 @@ if __name__ == "__main__":
 </body>
 
 </html>
+`
