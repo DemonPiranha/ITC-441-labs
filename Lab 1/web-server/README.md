@@ -97,19 +97,19 @@ Because there is only a single device, there isn't any communication between int
 Thought Questions
 -----------------
 
-What language did you choose for implementing this project? Why?
+**What language did you choose for implementing this project? Why?**
 
 I chose to implement this project using Python, HTML and inline Javascript. The Python code runs a plugin called Flask that is used to serve the web server. This ended up being a relatively comprehensible implementation due to a tutorial I found that explained how to utilize Flask. This is why I choose to go this route along with the fact that I am most familiar with Python and Javascript which helped me to expand on the tutorial and understand what was going on so that I could design it to meet all of the requirements.
 
-What is the purpose of the resistor in this simple circuit? What would happen if you omitted it?
+**What is the purpose of the resistor in this simple circuit? What would happen if you omitted it?**
 
 The primary purpose of the resistor is to limit the current through the LED. If the resistor wasn't there the LED would draw as much current as it could eventually causing it to burn up. This also benefits the Pi by not pulling more current than the Pi can supply and damaging the GPIO pins.
 
-What are practical applications of this device? What enhancements or modifications would you make?
+**What are practical applications of this device? What enhancements or modifications would you make?**
 
 One use for this could be to serve as an indicator in front of an office or classroom. It could show whether the person/people inside are available to be bothered. This could also work as a way to show the status of any system really. For example it could be used to tell workers in a manufacturing plant if they are keeping up with the production rate. This could easily be enhanced by adding an API of sorts to it so that the lights could be triggered automatically by anything. Another enhancement would be to modify it with an ultrasonic sensor so that it could be used as a rough distance indicator.
 
-Please estimate the total time you spent on this lab and report.?
+**Please estimate the total time you spent on this lab and report.?**
 
 I spent about 8 hours on the project with 4 hours on this lab report.
 
