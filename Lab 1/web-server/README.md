@@ -75,63 +75,67 @@ Procedures:
 -----------
 1.  Configure the Raspberry Pi if this needs to be done. This lab assumes a working Pi with Raspbian OS installed
 
-1.  Install Raspbian here <https://www.raspberrypi.com/software/> 
+2.  Install Raspbian here <https://www.raspberrypi.com/software/> 
 
 3.  Install the GPIO library if necessary. [wiringpi](https://github.com/WiringPi/WiringPi) was used for this project. For wiringpi, you'll need to follow the instructions in the github readme.
 
 4.  Python programming can be done in any supported IDE. For this project I used Raspbian's builtin Thonny Python IDE. Follow [this tutorial ](https://randomnerdtutorials.com/raspberry-pi-web-server-using-flask-to-control-gpios/)found in the references section to configure Flask.
 
-5.  Model of the functionality, logical flow, and components of the system. Diagram provided in Appendix.
+5.  Copy the Python code in this project into a web-server folder then create a templates folder inside this director and put the HTML code in an html file there. You can use the tutorial from the last step to create these through the terminal.
 
-1.  Functionality -- This system serves as a basic state machine, represented by the diagram in Appendix 1:
+6.  To start the server run "sudo python ledcontrol.py" inside the web-server directory.
 
-1.  While in the "Start" state:
+7.  Model of the functionality, logical flow, and components of the system. Diagram provided in Appendix.
 
-1.  The system configures GPIO outputs and clears all lights off then waits for a command.
+  1.  Functionality -- This system serves as a basic state machine, represented by the diagram in Appendix 1:
 
-2.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state where the LED associated with that color will be lit.
+    1.  While in the "Start" state:
 
-3.  If the system receives an /alloff command, it will change to the "All Off" state.
+      1.  The system configures GPIO outputs and clears all lights off then waits for a command.
 
-4.  If the system receives an /cycle command, it will change to the "Cycle" state.
+      2.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state where the LED associated with that color will be lit.
 
-3.  While in the "Color Action" state.
+      3.  If the system receives an /alloff command, it will change to the "All Off" state.
 
-1.  The alloff function is called to clear all lights and it returns to this state.
+      4.  If the system receives an /cycle command, it will change to the "Cycle" state.
 
-2.  The LED associated with the href pin and action command will be executed. This could mean turning any one of the lights on or off depending on the received <action>.
+    3.  While in the "Color Action" state.
 
-3.  If the system receives a  /<changepin>/<action> command again, it will change to the "Color Action" state where the LED associated with that color will be lit. This color may be different from the previous color.
+        1.  The alloff function is called to clear all lights and it returns to this state.
 
-4.  If the system receives an /alloff command, it will change to the "All Off" state.
+        2.  The LED associated with the href pin and action command will be executed. This could mean turning any one of the lights on or off depending on the received <action>.
 
-5.  If the system receives an /cycle command, it will change to the "Cycle" state.
+        3.  If the system receives a  /<changepin>/<action> command again, it will change to the "Color Action" state where the LED associated with that color will be lit. This color may be different from the previous color.
 
-5.  While in the "All Off" state:
+        4.  If the system receives an /alloff command, it will change to the "All Off" state.
 
-1.  This state clears all lights off and turns the cycle off then waits for a command.
+        5.  If the system receives an /cycle command, it will change to the "Cycle" state.
 
-2.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state where the LED associated with that color will be lit.
+     5.  While in the "All Off" state:
 
-3.  If the system receives an /alloff command, it will change to the "All Off" state.
+        1.  This state clears all lights off and turns the cycle off then waits for a command.
 
-4.  If the system receives an /cycle command, it will change to the "Cycle" state.
+        2.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state where the LED associated with that color will be lit.
 
-7.  While in the "Cycle" state:
+        3.  If the system receives an /alloff command, it will change to the "All Off" state.
 
-1.  The alloff function is called to clear all lights.
+        4.  If the system receives an /cycle command, it will change to the "Cycle" state.
 
-2.  Lights green, yellow, and red will be cycled in 5-3-5 intervals. This will cause the webpage to hang until another command is issued.
+    7.  While in the "Cycle" state:
 
-3.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state.
+        1.  The alloff function is called to clear all lights.
 
-4.  If the system receives an /alloff command, it will change to the "All Off" state.
+        2.  Lights green, yellow, and red will be cycled in 5-3-5 intervals. This will cause the webpage to hang until another command is issued.
 
-5.  If the system receives a /cycle command, it will remain in the "Cycle" state.
+        3.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state.
 
-7.  System Design -- The technical function of this system is outlined in the state diagram in Appendix 1. The technical function of this system is outlined in the state diagram in Appendix 1. The Included Python code in Appendix 5 also is straightforward enough to show all 4 different states.
+        4.  If the system receives an /alloff command, it will change to the "All Off" state.
 
-Component Diagram and Schematic Diagram -- This system is represented by the similar "as-built" diagrams in Appendix 2, showing a physical component diagram.
+        5.  If the system receives a /cycle command, it will remain in the "Cycle" state.
+
+9.  System Design -- The technical function of this system is outlined in the state diagram in Appendix 1. The technical function of this system is outlined in the state diagram in Appendix 1. The Included Python code in Appendix 5 also is straightforward enough to show all 4 different states.
+
+10. Component Diagram and Schematic Diagram -- This system is represented by the similar "as-built" diagrams in Appendix 2, showing a physical component diagram.
 
 Observations
 ------------
@@ -140,7 +144,7 @@ I had fun working on this lab and it was a great way to expand on the knowledge 
 
 Understanding how Flask worked and how to properly use it in Python was the biggest challenge for me. I have done web hosting in previous classes but it is still a gray area for me. In this lab however I saw how I could set the host address and port which opened the page on that network. I then could view the page from another on network device by navigating to the Pis IP address. This was pretty cool for me as I remember doing this before but never understood how it worked until now.
 
-The next difficulty I ran into was figuring out how to properly handle the light cycle. In order to have the lights light up in a pattern similar to a typical stoplight I decided to run  on and off commands inside a while loop with sleep delays in between each light. This allowed the lights to cycle correctly however once the program got into this while loop it wasn't able to break out without further intervention. I experimented with having the loop as a separate function and then thought about doing separate threads somehow but this all proved to not work. Ultimately with some help from classmates I came to the conclusion that I was overthinking things. The solution was ironically the easiest implementation. One of my classmates reminded me of global booleans that could be switched throughout the program and checked while running the loop. Putting this together with a if checks that would break the loop after every sleep the solution was complete. Aside from figuring out this there is still an issue with the webpage hanging while the loop is running. I did not have the time to find a work around for this however when another page link is clicked the page is able to properly resume. Fixing this would add far more stability to the system then is currently available.
+The next difficulty I ran into was figuring out how to properly handle the light cycle. In order to have the lights light up in a pattern similar to a typical stoplight I decided to run  on and off commands inside a while loop with sleep delays in between each light. This allowed the lights to cycle correctly however once the program got into this while loop it wasn't able to break out without further intervention. I experimented with having the loop as a separate function and then thought about doing separate threads somehow but this all proved to not work. Ultimately with some help from classmates I came to the conclusion that I was overthinking things. The solution was ironically the easiest implementation. One of my classmates reminded me of global booleans that could be switched throughout the program and checked while running the loop. Putting this together with a if checks that would break the loop after every sleep the solution was complete. Aside from figuring out this there is still an issue with the webpage hanging while the loop is running. I did not have the time to find a work around for this however when another page link is clicked the page is able to properly resume. Fixing this would add far more stability to the system than is currently available.
 
 Because there is only a single device, there isn't any communication between internal components. The single device does the following:
 
