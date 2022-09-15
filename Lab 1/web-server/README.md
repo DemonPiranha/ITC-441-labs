@@ -4,8 +4,6 @@ Lab 1 Report (2022)
 Raspberry Pi Webpage controlled Stop light
 ------------------------------------------
 
-DELETE https://github.com/AaronNelson95/IT441/blob/master/Lab%201/Lab%201%20Report.pdf
---------------------------------------------------------------------------------------
 
 Online Link:
 ------------
