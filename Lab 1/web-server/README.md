@@ -69,7 +69,7 @@ I used the following resources in this lab:
 
 -   <https://app.diagrams.net/> - Chart maker used to make the state diagram.
 
--   <https://1drv.ms/w/s!Ais81h0TsK5NhqEUuevEs8zMavzLag?e=hdaL2m> -- Todd Berrett's example write-up. Used for formatting.
+-   <https://1drv.ms/w/s!Ais81h0TsK5NhqEUuevEs8zMavzLag?e=hdaL2m> - Todd Berrett's example write-up. Used for formatting.
 
 Procedures:
 -----------
