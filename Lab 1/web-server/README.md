@@ -91,9 +91,9 @@ Procedures:
 
     i.  While in the "Start" state:
 
-       1.  The system configures GPIO outputs and clears all lights off then waits for a command.
-
-       2.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state where the LED associated with that color will be lit.
+        1.  The system configures GPIO outputs and clears all lights off then waits for a command.
+        
+        2.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state where the LED associated with that color will be lit.
 
         3.  If the system receives an /alloff command, it will change to the "All Off" state.
 
