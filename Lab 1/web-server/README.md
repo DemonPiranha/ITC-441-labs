@@ -75,7 +75,7 @@ Procedures:
 -----------
 1.  Configure the Raspberry Pi if this needs to be done. This lab assumes a working Pi with Raspbian OS installed
 
-  1.  Install Raspbian here <https://www.raspberrypi.com/software/> 
+    1.  Install Raspbian here <https://www.raspberrypi.com/software/> 
 
 2.  Install the GPIO library if necessary. [wiringpi](https://github.com/WiringPi/WiringPi) was used for this project. For wiringpi, you'll need to follow the instructions in the github readme.
 
