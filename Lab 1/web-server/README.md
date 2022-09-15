@@ -73,7 +73,65 @@ I used the following resources in this lab:
 
 Procedures:
 -----------
+1.  Configure the Raspberry Pi if this needs to be done. This lab assumes a working Pi with Raspbian OS installed
 
+1.  Install Raspbian here <https://www.raspberrypi.com/software/> 
+
+3.  Install the GPIO library if necessary. [wiringpi](https://github.com/WiringPi/WiringPi) was used for this project. For wiringpi, you'll need to follow the instructions in the github readme.
+
+4.  Python programming can be done in any supported IDE. For this project I used Raspbian's builtin Thonny Python IDE. Follow [this tutorial ](https://randomnerdtutorials.com/raspberry-pi-web-server-using-flask-to-control-gpios/)found in the references section to configure Flask.
+
+5.  Model of the functionality, logical flow, and components of the system. Diagram provided in Appendix.
+
+1.  Functionality -- This system serves as a basic state machine, represented by the diagram in Appendix 1:
+
+1.  While in the "Start" state:
+
+1.  The system configures GPIO outputs and clears all lights off then waits for a command.
+
+2.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state where the LED associated with that color will be lit.
+
+3.  If the system receives an /alloff command, it will change to the "All Off" state.
+
+4.  If the system receives an /cycle command, it will change to the "Cycle" state.
+
+3.  While in the "Color Action" state.
+
+1.  The alloff function is called to clear all lights and it returns to this state.
+
+2.  The LED associated with the href pin and action command will be executed. This could mean turning any one of the lights on or off depending on the received <action>.
+
+3.  If the system receives a  /<changepin>/<action> command again, it will change to the "Color Action" state where the LED associated with that color will be lit. This color may be different from the previous color.
+
+4.  If the system receives an /alloff command, it will change to the "All Off" state.
+
+5.  If the system receives an /cycle command, it will change to the "Cycle" state.
+
+5.  While in the "All Off" state:
+
+1.  This state clears all lights off and turns the cycle off then waits for a command.
+
+2.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state where the LED associated with that color will be lit.
+
+3.  If the system receives an /alloff command, it will change to the "All Off" state.
+
+4.  If the system receives an /cycle command, it will change to the "Cycle" state.
+
+7.  While in the "Cycle" state:
+
+1.  The alloff function is called to clear all lights.
+
+2.  Lights green, yellow, and red will be cycled in 5-3-5 intervals. This will cause the webpage to hang until another command is issued.
+
+3.  If the system receives a  /<changepin>/<action> command, it will change to the "Color Action" state.
+
+4.  If the system receives an /alloff command, it will change to the "All Off" state.
+
+5.  If the system receives a /cycle command, it will remain in the "Cycle" state.
+
+7.  System Design -- The technical function of this system is outlined in the state diagram in Appendix 1. The technical function of this system is outlined in the state diagram in Appendix 1. The Included Python code in Appendix 5 also is straightforward enough to show all 4 different states.
+
+Component Diagram and Schematic Diagram -- This system is represented by the similar "as-built" diagrams in Appendix 2, showing a physical component diagram.
 
 Observations
 ------------
