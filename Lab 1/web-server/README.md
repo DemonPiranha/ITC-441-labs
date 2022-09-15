@@ -119,3 +119,279 @@ Certification of Work
 I certify that the solution presented in this lab represents my own work. In the case where I have borrowed code or ideas from another person, I have provided a link to the author's work in the references and included a citation in the comments of my code. 
 
 --Blake Porter
+
+
+Appendix
+--------
+
+### Appendix 1: State Diagram
+
+![](https://lh3.googleusercontent.com/48fP6A_mxk1xbu_adeQk6CZFp-sbHipMucHWfpfk1wDb2dJn_AluOgcEpp_YMwntSbuTYt4XJdG7xiAuyCy2USRITq5rtvup86jYnNNDjjtSrmxoW67v-YgXYhpOQC5I5NC6JqH7k0ICU0QbSgVGloBzqHAyFvfnKTiFguZztiFQqNm4z5F28CKpaA)
+
+### Appendix 2: Physical Components Layout
+
+![](https://lh4.googleusercontent.com/SmwpVwkaulOw_wSm43FMfVg6ywxpaJktjjKiSz81XYRX3NoYfG4nClMe9wyrC--74p-y0v-YRbqcDf2rJF0TqzOBd-3SpDjrfarkWSgKTK_h_WLfeCJMuU6ZLwbgxYS4kpo5MeqlIG9KOMrfNClLXjvkPrc5vYQQbvQ0fc_uXHdpUtb_NGPIcf07mQ)
+
+![](https://lh3.googleusercontent.com/FcQQrGS3gKV-z7Bc8f0uhQjs7_4Q1jMlOWQV6Ja96W7EqquuZqpC6V4NAarhtemFH9zn9u6fMisjTD_ytjUIT8dy4zz3gm3GSXbvngmlxt7r_2WtxTusW-HxF9r7kjgz-wztk0nzUgbgV2zL9kTSCi5AqYTPSXDs89zcDWhNiquBvQ8U_pwKEt29ig)
+
+![](https://lh6.googleusercontent.com/RWzArNzhhcCORBgjAvtIxH1kZipxxG5j0XyovMfs4mN8rh1-tKAj7G4nx9ixkDk6Lf88TpKCOnrISolu878ovVZexfWafXr5MsmQRgZpHs-wrjcIJ2TjuYMQmlDw974brSs_L8VFh_wOzXGdvpEd7zgDP0rMBReiqEWMEeng1vDcFOuNOLV7X0BnCw)
+
+### Appendix 3: System Interface - Web Page
+
+State: startup
+
+![](https://lh4.googleusercontent.com/cho71n_PY_GjRTF-L8zZM6AGzyfSMjl4M-UpKKbEu-yJ4peDt-FKBVDr96fGMcrcTaKwjlmxsGD_s6nnOU37yvFZt4eVzBo8MRCQ2VBTo4kC1gkjgAA1Bwv8HAUbQVpeJdWkVcakmGDTzfOAMPyWu1arwQRaX14zGmXbeq7qG2j6A3emQi-RRUPNag)
+
+State: /<changepin>/<action>     This image is of state: /27/on and has similar function to the other pin states.
+
+![](https://lh3.googleusercontent.com/yrG-OdI4ugFO4GmIOB7pxeNYN3xyOVP4kQu0KUbNBckL5M_opJfOVLf4OT9gpQMmCFRsYqHKx0GdTWneROu_2POsdbMpdy-6DHndzzmpJxI_Ho6I2iPSbJM4d0_-ugG7g1Nd16eMPN_juMqaRjDIP8Aylz9aDZkKJKql33iQgYKC3nDJn8EAvE6C8g)
+
+State: /alloff
+
+![](https://lh4.googleusercontent.com/KGRRLIl_Mt8OniB45qniHY8Jli4xbrdJ6Hn5c8aKF2sF-ThsVXLn9T17AfOl0kf6yAJh4QhSaaY4MvahGdmppNs9Xdu9XjhV_n0sNHDjIuVcd4btFb4-s3WVnAD5CIFn_yrHyKUvpA-d-x_R5k6dU55pZBvTPd0liDn5m8S5motbJ226wbY4ONlY3A)
+
+State: /cycle
+
+![](https://lh5.googleusercontent.com/1dkgA3cknYCnARFoaQ3-VSzpjy3iTQyZUPKDEvDo4XQYs9Y_Q5A8HK96XVZ4bEpPx2VKhuhuQD9L6i2VzIl4FXN-d4HrtyUbwRgYw5Z_gODMf6DV165yYVj-cE8HxnyO4eJPN9qFqAjTDIlt-7IO62oHStvexdof5pr42iTtuUwstKWTVGJkXtk0MQ)
+
+### Appendix 4: Serial Monitor Output
+
+### ![](https://lh3.googleusercontent.com/DSWARZ3j2iLyP68dCdUHsv0Tot0bwlBNd1Ibnh50YpLxbZE_y701nPfcGHKWOfK8NnWNqsLFQxKlnmRyT7-gUFiwAMHDuWzGG7tqG12vBEW8IPN8lpZ32Yp9wb7t05EsVSePsHoNb7So21NXYZZwHe0eiqiPq21sBYZpHkQbtxZ5oBN9eXsR0Zvdhg)
+
+### Appendix 5: Python Code
+
+(available at <https://github.com/DemonPiranha/ITC-441-labs/blob/main/Lab%201/web-server/ledcontrol.py> )
+
+import RPi.GPIO as GPIO
+
+import time
+
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+#Setup for GPIO pins and clears them all
+
+GPIO.setwarnings(0)
+
+GPIO.setmode (GPIO.BCM)
+
+GPIO.setup(17, GPIO.OUT)
+
+GPIO.setup(27, GPIO.OUT)
+
+GPIO.setup(22, GPIO.OUT)
+
+GPIO.output(22, GPIO.LOW)
+
+GPIO.output(27, GPIO.LOW)
+
+GPIO.output(17, GPIO.LOW)
+
+#Sets Global stop variable for Cycle command
+
+global cycle
+
+cycle = True
+
+#Creates a dictionary to store pin number, name, and pin state
+
+pins = {
+
+   22 : {'name' : 'Red Light', 'state' : GPIO.LOW},
+
+   27 : {'name' : 'Yellow Light', 'state' : GPIO.LOW},
+
+   17 : {'name' : 'Green Light', 'state' : GPIO.LOW}
+
+   }
+
+#Main function used to start as well as render the webpage after other functions
+
+@app.route("/")
+
+def main():
+
+   #Store all the current pin states in pins dictionary
+
+   for pin in pins:
+
+      pins[pin]['state'] = GPIO.input(pin)
+
+   #Put the pin dictionary into the template data dictionary
+
+   templateData = {
+
+      'pins' : pins
+
+      }
+
+   #Returns the data to the webpage
+
+   return render_template('main.html', **templateData)
+
+#This function runs when a URL request that includes pin number and action
+
+@app.route("/<changePin>/<action>")
+
+def colorAction(changePin, action):
+
+   #Call alloff to clear outputs
+
+   alloff()
+
+   #Gets the pin from the URL and sets it as an integer
+
+   changePin = int(changePin)
+
+   #Checks the state of <action> and triggers the current light on or off
+
+   if action == "on":
+
+      #Set the pin high
+
+      GPIO.output(changePin, GPIO.HIGH)
+
+   if action == "off":
+
+      #Set the pin low
+
+      GPIO.output(changePin, GPIO.LOW)
+
+   return main()
+
+@app.route("/alloff")
+
+def alloff():
+
+    #Turns cycle off if it was on
+
+    global cycle
+
+    cycle = False
+
+    #Sets all GPIO outputs to off
+
+    GPIO.output(22, GPIO.LOW)
+
+    GPIO.output(27, GPIO.LOW)
+
+    GPIO.output(17, GPIO.LOW)
+
+    return main()
+
+@app.route("/cycle")
+
+def cycle():
+
+    #Call alloff to clear outputs
+
+    alloff()
+
+    #Turns cycle on if it was on
+
+    global cycle
+
+    cycle = True
+
+    #While loop that cycles the stoplight colors and checks if the cycle is still active after each sleep
+
+    #If cycle is no longer active the loop will break
+
+    while cycle == True:
+
+        GPIO.output(17, GPIO.HIGH)
+
+        time.sleep(5)
+
+        if cycle == False:
+
+            break
+
+        GPIO.output(17, GPIO.LOW)
+
+        GPIO.output(27, GPIO.HIGH)
+
+        time.sleep(3)
+
+        if cycle == False:
+
+            break
+
+        GPIO.output(27, GPIO.LOW)
+
+        GPIO.output(22, GPIO.HIGH)
+
+        time.sleep(5)
+
+        if cycle == False:
+
+            break
+
+        GPIO.output(22, GPIO.LOW)
+
+    return main()
+
+#Flask task that runs the webpage on localhost
+
+if __name__ == "__main__":
+
+   app.run(host='0.0.0.0', port=80, debug=True)
+
+### Appendix 6: HTML Code
+
+(available at <https://github.com/DemonPiranha/ITC-441-labs/blob/main/Lab%201/web-server/templates/main.html> )
+
+<!DOCTYPE html>
+
+<head>
+
+   <title>RPi StopLight Server</title>
+
+   <!-- Latest compiled and minified CSS -->
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+   <!-- Optional theme -->
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+   <!-- Latest compiled and minified JavaScript -->
+
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+   <h1>RPi StopLight Server</h1>
+
+   {% for pin in pins %}
+
+   <h2>{{ pins[pin].name }}
+
+   {% if pins[pin].state == true %}
+
+      is currently <strong>on</strong></h2><div class="row"><div class="col-md-2">
+
+      <a href="/{{pin}}/off" class="btn btn-block btn-lg btn-default" role="button">Turn off</a></div></div>
+
+   {% else %}
+
+      is currently <strong>off</strong></h2><div class="row"><div class="col-md-2">
+
+      <a href="/{{pin}}/on" class="btn btn-block btn-lg btn-primary" role="button">Turn on</a></div></div>
+
+   {% endif %}
+
+   {% endfor %}
+
+   <div class="row"><div class="col-md-2"><a href="/alloff" class="btn btn-block btn-lg btn-primary" role="button">Turn on</a></div></div>
+
+   <h2>Cycle Lights</h2>
+
+   <div class="row"><div class="col-md-2"><a href="/cycle" class="btn btn-block btn-lg btn-primary" role="button">Turn on</a></div></div>
+
+</body>
+
+</html>
