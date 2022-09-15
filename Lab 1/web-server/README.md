@@ -75,21 +75,21 @@ Procedures:
 -----------
 1.  Configure the Raspberry Pi if this needs to be done. This lab assumes a working Pi with Raspbian OS installed
 
-2.  Install Raspbian here <https://www.raspberrypi.com/software/> 
+  1.  Install Raspbian here <https://www.raspberrypi.com/software/> 
 
-3.  Install the GPIO library if necessary. [wiringpi](https://github.com/WiringPi/WiringPi) was used for this project. For wiringpi, you'll need to follow the instructions in the github readme.
+2.  Install the GPIO library if necessary. [wiringpi](https://github.com/WiringPi/WiringPi) was used for this project. For wiringpi, you'll need to follow the instructions in the github readme.
 
-4.  Python programming can be done in any supported IDE. For this project I used Raspbian's builtin Thonny Python IDE. Follow [this tutorial ](https://randomnerdtutorials.com/raspberry-pi-web-server-using-flask-to-control-gpios/)found in the references section to configure Flask.
+3.  Python programming can be done in any supported IDE. For this project I used Raspbian's builtin Thonny Python IDE. Follow [this tutorial ](https://randomnerdtutorials.com/raspberry-pi-web-server-using-flask-to-control-gpios/)found in the references section to configure Flask.
 
-5.  Copy the Python code in this project into a web-server folder then create a templates folder inside this director and put the HTML code in an html file there. You can use the tutorial from the last step to create these through the terminal.
+4.  Copy the Python code in this project into a web-server folder then create a templates folder inside this director and put the HTML code in an html file there. You can use the tutorial from the last step to create these through the terminal.
 
-6.  To start the server run "sudo python ledcontrol.py" inside the web-server directory.
+5.  To start the server run "sudo python ledcontrol.py" inside the web-server directory.
 
-7.  Model of the functionality, logical flow, and components of the system. Diagram provided in Appendix.
+6.  Model of the functionality, logical flow, and components of the system. Diagram provided in Appendix.
 
-  1.  Functionality -- This system serves as a basic state machine, represented by the diagram in Appendix 1:
+  a.  Functionality -- This system serves as a basic state machine, represented by the diagram in Appendix 1:
 
-    1.  While in the "Start" state:
+    i.  While in the "Start" state:
 
       1.  The system configures GPIO outputs and clears all lights off then waits for a command.
 
@@ -99,7 +99,7 @@ Procedures:
 
       4.  If the system receives an /cycle command, it will change to the "Cycle" state.
 
-    3.  While in the "Color Action" state.
+    ii.  While in the "Color Action" state.
 
         1.  The alloff function is called to clear all lights and it returns to this state.
 
@@ -111,7 +111,7 @@ Procedures:
 
         5.  If the system receives an /cycle command, it will change to the "Cycle" state.
 
-     5.  While in the "All Off" state:
+     iii.  While in the "All Off" state:
 
         1.  This state clears all lights off and turns the cycle off then waits for a command.
 
@@ -121,7 +121,7 @@ Procedures:
 
         4.  If the system receives an /cycle command, it will change to the "Cycle" state.
 
-    7.  While in the "Cycle" state:
+    iv.  While in the "Cycle" state:
 
         1.  The alloff function is called to clear all lights.
 
@@ -133,9 +133,9 @@ Procedures:
 
         5.  If the system receives a /cycle command, it will remain in the "Cycle" state.
 
-9.  System Design -- The technical function of this system is outlined in the state diagram in Appendix 1. The technical function of this system is outlined in the state diagram in Appendix 1. The Included Python code in Appendix 5 also is straightforward enough to show all 4 different states.
+7.  System Design -- The technical function of this system is outlined in the state diagram in Appendix 1. The technical function of this system is outlined in the state diagram in Appendix 1. The Included Python code in Appendix 5 also is straightforward enough to show all 4 different states.
 
-10. Component Diagram and Schematic Diagram -- This system is represented by the similar "as-built" diagrams in Appendix 2, showing a physical component diagram.
+8. Component Diagram and Schematic Diagram -- This system is represented by the similar "as-built" diagrams in Appendix 2, showing a physical component diagram.
 
 Observations
 ------------
