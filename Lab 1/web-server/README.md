@@ -150,7 +150,7 @@ State: ```/alloff```
 
 ![](https://lh4.googleusercontent.com/KGRRLIl_Mt8OniB45qniHY8Jli4xbrdJ6Hn5c8aKF2sF-ThsVXLn9T17AfOl0kf6yAJh4QhSaaY4MvahGdmppNs9Xdu9XjhV_n0sNHDjIuVcd4btFb4-s3WVnAD5CIFn_yrHyKUvpA-d-x_R5k6dU55pZBvTPd0liDn5m8S5motbJ226wbY4ONlY3A)
 
-State: /cycle
+State: ```/cycle```
 
 ![](https://lh5.googleusercontent.com/1dkgA3cknYCnARFoaQ3-VSzpjy3iTQyZUPKDEvDo4XQYs9Y_Q5A8HK96XVZ4bEpPx2VKhuhuQD9L6i2VzIl4FXN-d4HrtyUbwRgYw5Z_gODMf6DV165yYVj-cE8HxnyO4eJPN9qFqAjTDIlt-7IO62oHStvexdof5pr42iTtuUwstKWTVGJkXtk0MQ)
 
@@ -176,35 +176,23 @@ app = Flask(__name__)
 GPIO.setwarnings(0)
 
 GPIO.setmode (GPIO.BCM)
-
 GPIO.setup(17, GPIO.OUT)
-
 GPIO.setup(27, GPIO.OUT)
-
 GPIO.setup(22, GPIO.OUT)
-
 GPIO.output(22, GPIO.LOW)
-
 GPIO.output(27, GPIO.LOW)
-
 GPIO.output(17, GPIO.LOW)
 
 #Sets Global stop variable for Cycle command
-
 global cycle
-
 cycle = True
 
 #Creates a dictionary to store pin number, name, and pin state
 
 pins = {
-
    22 : {'name' : 'Red Light', 'state' : GPIO.LOW},
-
    27 : {'name' : 'Yellow Light', 'state' : GPIO.LOW},
-
    17 : {'name' : 'Green Light', 'state' : GPIO.LOW}
-
    }
 
 #Main function used to start as well as render the webpage after other functions
