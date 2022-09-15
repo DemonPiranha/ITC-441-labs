@@ -142,11 +142,11 @@ State: startup
 
 ![](https://lh4.googleusercontent.com/cho71n_PY_GjRTF-L8zZM6AGzyfSMjl4M-UpKKbEu-yJ4peDt-FKBVDr96fGMcrcTaKwjlmxsGD_s6nnOU37yvFZt4eVzBo8MRCQ2VBTo4kC1gkjgAA1Bwv8HAUbQVpeJdWkVcakmGDTzfOAMPyWu1arwQRaX14zGmXbeq7qG2j6A3emQi-RRUPNag)
 
-State: /<changepin>/<action>     This image is of state: /27/on and has similar function to the other pin states.
+State: ```/<changepin>/<action>```     This image is of state: /27/on and has similar function to the other pin states.
 
 ![](https://lh3.googleusercontent.com/yrG-OdI4ugFO4GmIOB7pxeNYN3xyOVP4kQu0KUbNBckL5M_opJfOVLf4OT9gpQMmCFRsYqHKx0GdTWneROu_2POsdbMpdy-6DHndzzmpJxI_Ho6I2iPSbJM4d0_-ugG7g1Nd16eMPN_juMqaRjDIP8Aylz9aDZkKJKql33iQgYKC3nDJn8EAvE6C8g)
 
-State: /alloff
+State: ```/alloff```
 
 ![](https://lh4.googleusercontent.com/KGRRLIl_Mt8OniB45qniHY8Jli4xbrdJ6Hn5c8aKF2sF-ThsVXLn9T17AfOl0kf6yAJh4QhSaaY4MvahGdmppNs9Xdu9XjhV_n0sNHDjIuVcd4btFb4-s3WVnAD5CIFn_yrHyKUvpA-d-x_R5k6dU55pZBvTPd0liDn5m8S5motbJ226wbY4ONlY3A)
 
