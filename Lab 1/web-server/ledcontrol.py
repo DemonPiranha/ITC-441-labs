@@ -43,7 +43,7 @@ def main():
 
 #This function runs when a URL request that includes pin number and action
 @app.route("/<changePin>/<action>")
-def action(changePin, action):
+def colorAction(changePin, action):
    
    #Call alloff to clear outputs
    alloff()
