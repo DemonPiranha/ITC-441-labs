@@ -145,7 +145,7 @@ void loop() {
   client.println("</html>");
 }
 
-//These functions directly contol the lights so that the loop can call these at anytime to change the light that is on.
+//These functions directly control the lights so that the loop can call these at any time to change the light that is on.
 void allLightsOff() {
   digitalWrite(D1, LOW);
   digitalWrite(D2, LOW);
