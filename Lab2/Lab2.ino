@@ -78,7 +78,7 @@ void loop() {
     cycle = false;
     redLight();
   }
-  if (req.indexOf("/auto") != -1) {
+  if (req.indexOf("/cycle") != -1) {
     cycle = true;
     startMillis = millis();
   }
@@ -136,7 +136,7 @@ void loop() {
   client.print("<h2>Cycle Light</h2>");
   client.print("<a href='http://");
   client.print(WiFi.localIP());
-  client.print("/auto' class='btn btn-block btn-lg btn-primary' role='button'><br>Turn on<br><br></a><br>");
+  client.print("/cycle' class='btn btn-block btn-lg btn-primary' role='button'><br>Turn on<br><br></a><br>");
 
 
   client.println("<span>Created by Blake Porter</span>");
