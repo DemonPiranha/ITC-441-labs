@@ -1,0 +1,24 @@
+alias: Door Opened Red On
+description: ""
+trigger:
+  - type: turned_on
+    platform: device
+    device_id: 6628b5f7c3e24b93dc9c6f117d1280a7
+    entity_id: binary_sensor.garage_door_sensor
+    domain: binary_sensor
+condition:
+  - condition: and
+    conditions:
+      - type: is_value
+        condition: device
+        device_id: 45b49d3b8c324ff1b8402005040628b1
+        entity_id: sensor.ultrasonic_sensor
+        domain: sensor
+        above: 10
+        below: 20
+action:
+  - type: turn_on
+    device_id: eba45fac4c4764fd905016f1d2670fbe
+    entity_id: light.garage_red_light
+    domain: light
+mode: single

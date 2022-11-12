@@ -1,0 +1,21 @@
+alias: Car in Garage Yes
+description: ""
+trigger:
+  - type: value
+    platform: device
+    device_id: 45b49d3b8c324ff1b8402005040628b1
+    entity_id: sensor.ultrasonic_sensor
+    domain: sensor
+    below: 30
+    above: 1
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+condition: []
+action:
+  - type: turn_on
+    device_id: 45b49d3b8c324ff1b8402005040628b1
+    entity_id: light.garage_distance_status_indicator
+    domain: light
+mode: single
